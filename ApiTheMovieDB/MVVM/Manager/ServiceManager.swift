@@ -87,4 +87,40 @@ open class ServiceManager {
         }
     }
     
+    internal func performSearchMovieService(movie: String, completion: @escaping (_ error:
+        ServiceError, _ responseModel: SearchMovieResponse?) -> Void) {
+        
+        let urlrequest = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&language=en-US&query=\(movie)&page=1&include_adult=false"
+        
+        //let model = DetailMovieRequest(apikey: apiKey, idMovie: idMovie, language: "en-US")
+        let body = ""//Mapper().toJSONString(model) ?? ""
+        
+        ServerUtils.defaultManager.request(ServerUtils.createRequest(urlString: urlrequest, body: body)).responseJSON { (response) in
+            
+            print(response.result.value ?? "")
+            var serviceError = ServiceError()
+            
+            if let error = response.result.error as? AFError {
+                serviceError = ServiceError(httpCode: response.response?.statusCode ?? 0, exception:error.localizedDescription, message:error.errorDescription ?? "", cveDiagnostic: "")
+            }
+            
+            if response.result.isSuccess {
+                if let value = response.result.value as? [String : Any] {
+                    if let resp = Mapper<SearchMovieResponse>().map(JSON: value) {
+                        
+                        completion(serviceError, resp)
+                    }
+                    else {
+                        serviceError.message = "Ocurrio un error al convertir JSON"
+                        completion(serviceError , nil)
+                    }
+                }
+            }
+            else {
+                completion(serviceError, nil)
+            }
+            
+        }
+    }
+    
 }

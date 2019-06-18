@@ -15,6 +15,7 @@ open class ServiceViewModel: ValidInputData {
     
     public var onSuccessMoviesService:((_ response: MoviesResponse) -> ())?
     public var onSuccessDetailMovieService:((_ response: DetailMovieResponse) -> ())?
+    public var onSuccessSearchMovieService:((_ response: SearchMovieResponse) -> ())?
     
     private let manager = ServiceManager()
     
@@ -48,6 +49,24 @@ open class ServiceViewModel: ValidInputData {
             if let response = response {
                 
                 self.onSuccessDetailMovieService?(response)
+            }else {
+                
+                self.onServiceError?(error)
+            }
+        })
+    }
+    
+    public func performSearchMovieService(movie: String){
+        
+        self.showLoading?()
+        
+        manager.performSearchMovieService(movie: movie, completion: { ( _ error:
+            ServiceError ,_ response: SearchMovieResponse?) in
+            self.hideLoading?()
+            
+            if let response = response {
+                
+                self.onSuccessSearchMovieService?(response)
             }else {
                 
                 self.onServiceError?(error)

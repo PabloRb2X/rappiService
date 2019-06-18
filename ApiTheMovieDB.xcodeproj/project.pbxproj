@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27B08A6BCF889FD742851735 /* Pods_ApiTheMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679596F19D898460D37EA1C6 /* Pods_ApiTheMovieDB.framework */; };
+		9AA9106822B846CA007D40D1 /* SearchMovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA9106722B846CA007D40D1 /* SearchMovieResponse.swift */; };
+		9AA9106922B846CA007D40D1 /* SearchMovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA9106722B846CA007D40D1 /* SearchMovieResponse.swift */; };
 		9AF33FE522B2C8800056BFA4 /* ApiTheMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF33FDB22B2C8800056BFA4 /* ApiTheMovieDB.framework */; };
 		9AF33FEA22B2C8800056BFA4 /* ApiTheMovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF33FE922B2C8800056BFA4 /* ApiTheMovieDBTests.swift */; };
 		9AF33FEC22B2C8800056BFA4 /* ApiTheMovieDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AF33FDE22B2C8800056BFA4 /* ApiTheMovieDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +43,7 @@
 /* Begin PBXFileReference section */
 		679596F19D898460D37EA1C6 /* Pods_ApiTheMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiTheMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9496CE36CFC814D5F86D802F /* Pods-ApiTheMovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiTheMovieDB.debug.xcconfig"; path = "Target Support Files/Pods-ApiTheMovieDB/Pods-ApiTheMovieDB.debug.xcconfig"; sourceTree = "<group>"; };
+		9AA9106722B846CA007D40D1 /* SearchMovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieResponse.swift; sourceTree = "<group>"; };
 		9AF33FDB22B2C8800056BFA4 /* ApiTheMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApiTheMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF33FDE22B2C8800056BFA4 /* ApiTheMovieDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiTheMovieDB.h; sourceTree = "<group>"; };
 		9AF33FDF22B2C8800056BFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 			children = (
 				9AF3400522B2F1CD0056BFA4 /* DetailMovieResponse.swift */,
 				9AF3401022B301CB0056BFA4 /* MoviesResponse.swift */,
+				9AA9106722B846CA007D40D1 /* SearchMovieResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -379,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF33FFD22B2ECC30056BFA4 /* ServerUtils.swift in Sources */,
+				9AA9106822B846CA007D40D1 /* SearchMovieResponse.swift in Sources */,
 				9AF3400622B2F1CD0056BFA4 /* DetailMovieResponse.swift in Sources */,
 				9AF3400222B2EE970056BFA4 /* ServiceViewModel.swift in Sources */,
 				9AF3401122B301CB0056BFA4 /* MoviesResponse.swift in Sources */,
@@ -398,6 +403,7 @@
 				9AF33FEA22B2C8800056BFA4 /* ApiTheMovieDBTests.swift in Sources */,
 				9AF3400F22B2FDBB0056BFA4 /* ServerUtils.swift in Sources */,
 				9AF3400E22B2FDB80056BFA4 /* ValidInputData.swift in Sources */,
+				9AA9106922B846CA007D40D1 /* SearchMovieResponse.swift in Sources */,
 				9AF3400922B2F7320056BFA4 /* ServiceViewModel.swift in Sources */,
 				9AF3400822B2F72F0056BFA4 /* ServiceManager.swift in Sources */,
 			);

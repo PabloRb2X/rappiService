@@ -55,6 +55,18 @@ class ApiTheMovieDBTests: XCTestCase {
         
         waitForExpectations(timeout: 60, handler: nil)
     }
+    
+    func testSearchMovieService(){
+        serviceViewModel.onSuccessSearchMovieService = {(_ response: SearchMovieResponse) -> Void in
+            print(response)
+            XCTAssert(true, "El servicio respondió correctamente")
+            self.expectation.fulfill()
+        }
+        
+        serviceViewModel.performSearchMovieService(movie: "Matrix")
+        
+        waitForExpectations(timeout: 60, handler: nil)
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
